@@ -1,0 +1,71 @@
+<include file="Public/weiante_head"/>	
+<link href="{:ADDON_PUBLIC_PATH}/card.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<style>    
+    .vip_bg{background:url(./Public/Home/images/weiante/vip_topbg.jpg) repeat-x top;}
+</style>
+<body>
+    {$footer_html}
+    <div id="" class="vip_bg">
+        <h5 class="page_title ">支付记录</h5>
+        <div class="w90b "  style="margin-top:50px">
+            <!--
+               <div class="bse0 mt20 bgcfff">
+                <div class="p10 bbscc fs14"><span class="fr fchuang">100元</span>账户余额</div>
+              </div> -->
+
+<?php 
+function Cate($payed){ 
+$str = "未支付";
+if($payed==1){
+	$str = "已支付";
+}
+return $str; 
+}
+
+function MoneyC($money){ 
+$str = $money/100;
+return $str; 
+}
+?>
+            <div class=" mt20">支付记录:</div>
+            <div class="bse0 bgcfff tacn">
+                <div class="p10 bbscc lh20 h20 bold fs14">
+                    <div class="w30b fl">支付金额</div>
+                    <div class="w30b fl">支付状态</div>
+                    <div class="w30b fl">支付时间</div>
+                </div>
+                <volist name='list' id="vo">
+                    <div class="p10 bbscc lh20 h20">
+                        <div class="w30b fl"> {$vo.money|MoneyC=###} 元</div>
+                        <div class="w30b fl"> {$vo.payed|Cate=###}</div>
+                        <!--<div class="w30b fl">{$vo.cTime}</div>-->
+                        <div class="w30b fl">{$vo.cTime|time_format=###}</div>
+                    </div>
+                </volist>
+            </div> 
+
+        </div>
+
+        <if condition="empty($list)" >
+            <div class="empty_default">
+                <p><img src="{:ADDON_PUBLIC_PATH}/no_coupon.png"/><br/>目前还没支付记录~</p>
+            </div>
+        </if>
+        <p class="copyright">{$system_copy_right}</p>
+        <nav class="bottom_nav">
+            <a class="icon_card" href="{:addons_url('Card://Card/showCard')}">会员中心</a>
+            <!--        <a class="icon_crown" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/introduction')}">特权</a>-->
+            <a class="icon_time" href="{:addons_url('Card://notice/show')}">最新通知</a>
+            <a class="icon_tag cur" href="{:addons_url('Card://expense/show')}">支付记录</a>
+            <!--        <a class="icon_gift" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/exchange')}">兑换</a>
+                <a class="icon_time" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/score')}">签到</a>-->
+        </nav>     
+        <div class="bottom_nav_blank"></div>       
+    </div>
+</body>
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideToolbar');
+    });
+</script>
+</html>

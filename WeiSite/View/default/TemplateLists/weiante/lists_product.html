@@ -1,0 +1,31 @@
+<include file="Public/weiante_head"/>	
+<body id="weisite">
+    {$footer_html}   
+
+    <div class="centent">
+        <volist name="list_data" id="vo">
+            <div class="<if condition="$i % 2 eq 1">fl<else />fr</if> w48b mt15">
+                <a href="{:U('detail', 'id='.$vo[id])}">
+                    <img src="{$vo.cover|get_cover_url}" width="100%" />
+                </a>
+                <div class="case_title">
+                    <a href="{:U('detail', 'id='.$vo[id])}">{$vo.title}</a>
+                </div>
+            </div>
+        </volist>
+        <!-- 分页 -->
+        <div class="page"> {$_page|default=''} </div>
+    </div>
+    <!-- 底部导航 -->
+    <div style="clear: both;"></div>
+<include file="Public/weiante_footer"/>	
+<!-- 统计代码 -->
+<notempty name="config.code">
+    <p class="hide bdtongji">
+        {$config.code}
+    </p>
+</notempty>
+</body>
+<script type="text/javascript">
+</script>
+</html>

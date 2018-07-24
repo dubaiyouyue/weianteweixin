@@ -1,0 +1,129 @@
+<!-- 头部 -->
+<include file="Public/weiante_head"/>	
+<link rel="stylesheet" type="text/css" href="{:ADDON_PUBLIC_PATH}/message.css" media="all">
+
+<body>
+    {$footer_html}
+    <div><img src="__IMG__/weiante/message.jpg" width="100%" /></div>
+    <div class="w95b mt30">
+        <div class="tacn fs20 fclan mb30">在线报修 / Repairs</div>
+        <form method="post" enctype="multipart/form-data">
+		
+                <div class="form-item cf">
+                    <label class="item-label">项目名称</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="nicknamexxmm" id="nicknamexxmm" value="">
+                    </div>
+                </div>
+		
+            <if condition="$need_nickname">
+                <div class="form-item cf">
+                    <label class="item-label">报修联系人</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="nickname" id="nickname" value="">
+                    </div>
+                </div>
+            </if>
+            <if condition="$need_mobile">
+                <div class="form-item cf">
+                    <label class="item-label">联系电话</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="mobile" id="mobile" value="">
+                    </div>
+                </div>
+            </if>
+			
+			
+                <div class="form-item cf">
+                    <label class="item-label">维安特商务经理</label>
+                    <div class="controls">
+						
+                        <select name="swbjlwat"  class="text input-medium input3 yuan bgcfff h45 t2em">
+							<option value="无">请选择维安特商务经理</option>
+						<?php
+						 $bxnrqq1=$configconfig['need_ssbbjjll'];
+						 //$bxnrqq1=explode("\n",$bxnrqq1);
+						 $bxnrqq1=str_ireplace("\n",'#',$bxnrqq1);
+						 $bxnrqq1=explode('#',$bxnrqq1);
+						 //dump($bxnrqq1);
+						 foreach($bxnrqq1 as $k1=>$v1){
+							//echo $k1;
+							$k2=$k1+1;
+							if(!($k1%2)) echo '<option value="'.$v1.'#'.$bxnrqq1[$k2].'">'.$v1.'</option>';
+						 }
+						?>
+						</select>
+						
+						
+						
+                    </div>
+                </div>
+			
+                <div class="form-item cf">
+                    <label class="item-label">填报日期</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="tbrqqwx" id="tbrqqwx" value="<?php echo date('Y-m-d H:m:s',time());?>" readonly="readonly">
+                    </div>
+                </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			上传图片<input type="file" name="upfile" id="file" />
+  
+
+
+				<div class="form-item cf">
+                    <label class="item-label">报修内容</label>
+                    <div class="controls">
+                        <select name="content"  class="text input-medium input3 yuan bgcfff h45 t2em">
+							<option value="无">请选择报修内容</option>
+						<?php
+						 $bxnrqq=$configconfig['need_bxnrqq'];
+						 $bxnrqq=explode("\n",$bxnrqq);
+						 //dump($bxnrqq);
+						 foreach($bxnrqq as $k=>$v){
+							echo '<option value="'.$v.'">'.$v.'</option>';
+						 }
+						?>
+						</select>
+                    </div>
+                </div>
+
+
+
+
+            
+            <div class="form-item cf tb pt_10">
+                <button class="tacn yuan bgclan fs16 fcfff lh35 mt20 home_btn submit-btn mb_10 flex_1" id="submit" type="submit" target-form="form-horizontal">提交工单</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="copyright">©2014 维安特&nbsp;&nbsp;技术支持：<a style="color: #999;" href="http://www.resonance.com.cn">南宁共振广告</a></div>
+
+    <script type="text/javascript">
+        $('.submit-btn').click(function () {
+            //$.Dialog.loading();//loading等待调用  loading完成$.Dialog.close();关闭loading
+            //$.Dialog.success();//成功调用 提示一秒后自动关闭
+            if ($('#nickname').val() != undefined && $('#nickname').val() == "") {
+                $.Dialog.fail("请填写姓名！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+            if ($('#mobile').val() != undefined && $('#mobile').val() == "") {
+                $.Dialog.fail("请填写联系方式！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+            if ($('#content').val() == "") {
+                $.Dialog.fail("请填写留言内容！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+        })
+    </script>
+</body>
+</html>

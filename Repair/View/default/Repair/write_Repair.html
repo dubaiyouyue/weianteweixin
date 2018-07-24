@@ -1,0 +1,216 @@
+<!-- 头部 -->
+<include file="Public/weiante_head"/>	
+<link rel="stylesheet" type="text/css" href="{:ADDON_PUBLIC_PATH}/message.css" media="all">
+
+<body>
+    {$footer_html}
+    <div><img src="__IMG__/weiante/message.jpg" width="100%" /></div>
+   <?php
+   $gla=$_GET['la'];
+$glo=$_GET['lo'];
+   if(!$gla || !$glo){?>
+   <style>
+   #alllssssss{display:none;}
+   </style>
+<div style="
+    background: yellow;
+    color: red;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 0px;
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;    line-height: 16px;
+"><img style="
+    vertical-align: middle;
+    margin-right: 6px;
+" src="data:image/gif;base64,R0lGODlhEAAQAPYAAP///wAAAPr6+pKSkoiIiO7u7sjIyNjY2J6engAAAI6OjsbGxjIyMlJSUuzs7KamppSUlPLy8oKCghwcHLKysqSkpJqamvT09Pj4+KioqM7OzkRERAwMDGBgYN7e3ujo6Ly8vCoqKjY2NkZGRtTU1MTExDw8PE5OTj4+PkhISNDQ0MrKylpaWrS0tOrq6nBwcKysrLi4uLq6ul5eXlxcXGJiYoaGhuDg4H5+fvz8/KKiohgYGCwsLFZWVgQEBFBQUMzMzDg4OFhYWBoaGvDw8NbW1pycnOLi4ubm5kBAQKqqqiQkJCAgIK6urnJyckpKSjQ0NGpqatLS0sDAwCYmJnx8fEJCQlRUVAoKCggICLCwsOTk5ExMTPb29ra2tmZmZmhoaNzc3KCgoBISEiIiIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCAAAACwAAAAAEAAQAAAHaIAAgoMgIiYlg4kACxIaACEJCSiKggYMCRselwkpghGJBJEcFgsjJyoAGBmfggcNEx0flBiKDhQFlIoCCA+5lAORFb4AJIihCRbDxQAFChAXw9HSqb60iREZ1omqrIPdJCTe0SWI09GBACH5BAkIAAAALAAAAAAQABAAAAdrgACCgwc0NTeDiYozCQkvOTo9GTmDKy8aFy+NOBA7CTswgywJDTIuEjYFIY0JNYMtKTEFiRU8Pjwygy4ws4owPyCKwsMAJSTEgiQlgsbIAMrO0dKDGMTViREZ14kYGRGK38nHguHEJcvTyIEAIfkECQgAAAAsAAAAABAAEAAAB2iAAIKDAggPg4iJAAMJCRUAJRIqiRGCBI0WQEEJJkWDERkYAAUKEBc4Po1GiKKJHkJDNEeKig4URLS0ICImJZAkuQAhjSi/wQyNKcGDCyMnk8u5rYrTgqDVghgZlYjcACTA1sslvtHRgQAh+QQJCAAAACwAAAAAEAAQAAAHZ4AAgoOEhYaCJSWHgxGDJCQARAtOUoQRGRiFD0kJUYWZhUhKT1OLhR8wBaaFBzQ1NwAlkIszCQkvsbOHL7Y4q4IuEjaqq0ZQD5+GEEsJTDCMmIUhtgk1lo6QFUwJVDKLiYJNUd6/hoEAIfkECQgAAAAsAAAAABAAEAAAB2iAAIKDhIWGgiUlh4MRgyQkjIURGRiGGBmNhJWHm4uen4ICCA+IkIsDCQkVACWmhwSpFqAABQoQF6ALTkWFnYMrVlhWvIKTlSAiJiVVPqlGhJkhqShHV1lCW4cMqSkAR1ofiwsjJyqGgQAh+QQJCAAAACwAAAAAEAAQAAAHZ4AAgoOEhYaCJSWHgxGDJCSMhREZGIYYGY2ElYebi56fhyWQniSKAKKfpaCLFlAPhl0gXYNGEwkhGYREUywag1wJwSkHNDU3D0kJYIMZQwk8MjPBLx9eXwuETVEyAC/BOKsuEjYFhoEAIfkECQgAAAAsAAAAABAAEAAAB2eAAIKDhIWGgiUlh4MRgyQkjIURGRiGGBmNhJWHm4ueICImip6CIQkJKJ4kigynKaqKCyMnKqSEK05StgAGQRxPYZaENqccFgIID4KXmQBhXFkzDgOnFYLNgltaSAAEpxa7BQoQF4aBACH5BAkIAAAALAAAAAAQABAAAAdogACCg4SFggJiPUqCJSWGgkZjCUwZACQkgxGEXAmdT4UYGZqCGWQ+IjKGGIUwPzGPhAc0NTewhDOdL7Ykji+dOLuOLhI2BbaFETICx4MlQitdqoUsCQ2vhKGjglNfU0SWmILaj43M5oEAOwAAAAAAAAAAAA==" />正在定位您的位置，请稍等.....</div><?php }?>
+	<div id="alllssssss">
+	<div class="w95b mt30">
+		
+        <div class="tacn fs20 fclan mb30">在线报修 / Repairs</div>
+        <form method="post" enctype="multipart/form-data">
+		
+                <div class="form-item cf">
+                    <label class="item-label">项目名称</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="nicknamexxmm" id="nicknamexxmm" value="">
+                    </div>
+                </div>
+		
+            <if condition="$need_nickname">
+                <div class="form-item cf">
+                    <label class="item-label">报修联系人</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="nickname" id="nickname" value="">
+                    </div>
+                </div>
+            </if>
+            <if condition="$need_mobile">
+                <div class="form-item cf">
+                    <label class="item-label">联系电话</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="mobile" id="mobile" value="">
+                    </div>
+                </div>
+            </if>
+			
+			
+                <div class="form-item cf">
+                    <label class="item-label">维安特商务经理</label>
+                    <div class="controls">
+						
+                        <select name="swbjlwat"  class="text input-medium input3 yuan bgcfff h45 t2em">
+							<option value="无">请选择维安特商务经理</option>
+						<?php
+						 $bxnrqq1=$configconfig['need_ssbbjjll'];
+						 //$bxnrqq1=explode("\n",$bxnrqq1);
+						 $bxnrqq1=str_ireplace("\n",'#',$bxnrqq1);
+						 $bxnrqq1=explode('#',$bxnrqq1);
+						 //dump($bxnrqq1);
+						 foreach($bxnrqq1 as $k1=>$v1){
+							//echo $k1;
+							$k2=$k1+1;
+							if(!($k1%2)) echo '<option value="'.$v1.'#'.$bxnrqq1[$k2].'">'.$v1.'</option>';
+						 }
+						?>
+						</select>
+						
+						
+						
+                    </div>
+                </div>
+				
+				
+			<!--获取地理位置开始-->
+			<input type="hidden" value="<?php echo $gla;?>" name="ssdddddwzla" id="ssdddddwzla" />
+			<input type="hidden" value="<?php echo $glo;?>" name="ssdddddwzlo" id="ssdddddwzlo" />
+			
+			<div class="form-item cf" id="ssdddddwz">
+			<label class="item-label">报修地址 <span style="color:red;"> 可点击地图精确标注您的位置</span></label>
+<?php
+
+if($gla && $glo){
+?>
+<div class="ditu" id="map" style="margin:auto;width:100%;height:180px;"></div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=X8u8xx9GzO88EIydfLbTsvbK&v=1.0"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("map");
+	map.centerAndZoom(new BMap.Point(<?php echo $glo;?>,<?php echo $gla;?>), 17);
+
+	map.addControl(new BMap.ZoomControl());  //添加地图缩放控件
+	var marker1 = new BMap.Marker(new BMap.Point(<?php echo $glo;?>,<?php echo $gla;?>));  //创建标注
+	map.addOverlay(marker1);                 // 将标注添加到地图中
+	//创建信息窗口
+	//var infoWindow1 = new BMap.InfoWindow("广西友裕门业有限公司<br>地址：南宁市江南区高棠路平阳仓库F8号");
+	//marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+  map.addEventListener("click", function (e) {
+    //marker1.setPoint(e.Point);
+	map.clearOverlays();
+    map.addOverlay(new BMap.Marker(new BMap.Point(e.point.lng,e.point.lat)));
+	//alert(e.point.lng);
+	//alert(e.point.lat);
+    //将点击的点的坐标显示在页面上
+    document.getElementById("ssdddddwzlo").value = e.point.lng;
+    document.getElementById("ssdddddwzla").value = e.point.lat;
+    //InOrOutPolygon(e.point.lng, e.point.lat);
+  });
+</script>
+<?php
+}else{
+?>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  //alert(position.coords.accuracy);
+  location.href = '/bd.php?la='+ position.coords.latitude +'&lo='+ position.coords.longitude;
+  //location.href = '/index.php?s=/addon/Repair/Repair/writeRepair/la/'+ position.coords.latitude +'/lo/'+ position.coords.longitude+'.html';
+  return false;
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude;	
+  }
+getLocation();
+</script>
+<?php }?>
+			</div>
+			<!--获取地理位置结束-->
+			
+			
+                <div class="form-item cf">
+                    <label class="item-label">填报日期</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff h45 t2em" name="tbrqqwx" id="tbrqqwx" value="<?php echo date('Y-m-d H:m:s',time());?>" readonly="readonly">
+                    </div>
+                </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			上传图片<input type="file" name="upfile" id="file" />
+  
+
+
+				<div class="form-item cf">
+                    <label class="item-label">报修内容</label>
+                    <div class="controls">
+                        <select name="content"  class="text input-medium input3 yuan bgcfff h45 t2em">
+							<option value="无">请选择报修内容</option>
+						<?php
+						 $bxnrqq=$configconfig['need_bxnrqq'];
+						 $bxnrqq=explode("\n",$bxnrqq);
+						 //dump($bxnrqq);
+						 foreach($bxnrqq as $k=>$v){
+							echo '<option value="'.$v.'">'.$v.'</option>';
+						 }
+						?>
+						</select>
+                    </div>
+                </div>
+
+
+
+
+            
+            <div class="form-item cf tb pt_10">
+                <button class="tacn yuan bgclan fs16 fcfff lh35 mt20 home_btn submit-btn mb_10 flex_1" id="submit" type="submit" target-form="form-horizontal">提交工单</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="copyright">©2014 维安特&nbsp;&nbsp;技术支持：<a style="color: #999;" href="http://www.resonance.com.cn">南宁共振广告</a></div>
+
+    <script type="text/javascript">
+        $('.submit-btn').click(function () {
+            //$.Dialog.loading();//loading等待调用  loading完成$.Dialog.close();关闭loading
+            //$.Dialog.success();//成功调用 提示一秒后自动关闭
+            if ($('#nickname').val() != undefined && $('#nickname').val() == "") {
+                $.Dialog.fail("请填写姓名！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+            if ($('#mobile').val() != undefined && $('#mobile').val() == "") {
+                $.Dialog.fail("请填写联系方式！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+            if ($('#content').val() == "") {
+                $.Dialog.fail("请填写留言内容！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+        })
+    </script></div>
+</body>
+</html>

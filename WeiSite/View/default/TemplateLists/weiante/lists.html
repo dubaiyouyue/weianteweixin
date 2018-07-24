@@ -1,0 +1,35 @@
+<include file="Public/weiante_head"/>	
+<body id="weisite">
+    {$footer_html}    
+    <div class="centent" style="width:100% !important; margin:0 !important; ">
+        <volist name="list_data" id="vo">
+            <a href="{:U('detail', 'id='.$vo[id])}"><div class="h65 news bbscc bgcfff p10">
+                    <div class="fl" style="width:90%">
+                        <div class="fs14 fclan new_title">{$vo.title}</div>
+                        <div class="fc999 new_cn">{$vo.intro}</div>
+                        <div class="h12 mt5">
+                            <div class="fl"><img src="__IMG__/weiante/time.jpg" width="12" height="12" /> </div>
+                            <div class="fl fs10 lh12 ml5 fc999">{$vo.cTime|time_format=###,'Y-m-d'}</div>
+                            <div class="fl ml10"><img src="__IMG__/weiante/look.jpg" width="17" height="12" /></div>
+                            <div class="fl fs10 lh12 ml5 fc999">{$vo.view_count}</div>
+                        </div>
+                    </div>
+                    <div class="fr mt20"><img src="__IMG__/weiante/go.jpg" width="17" height="17" /></div>
+                </div></a>
+        </volist>
+        <!-- 分页 -->
+        <div class="page"> {$_page|default=''} </div>
+    </div>
+    <div style="clear: both;"></div>
+    <!-- 底部导航 -->
+<include file="Public/weiante_footer"/>	
+<!-- 统计代码 -->
+<notempty name="config.code">
+    <p class="hide bdtongji">
+        {$config.code}
+    </p>
+</notempty>
+</body>
+<script type="text/javascript">
+</script>
+</html>

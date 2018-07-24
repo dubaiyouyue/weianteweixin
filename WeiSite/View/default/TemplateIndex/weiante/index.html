@@ -1,0 +1,135 @@
+<include file="Public/weiante_head"/>	
+<link href="{:CUSTOM_TEMPLATE_PATH}Index/weiante/main.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body id="weisite">
+   {$footer_html}
+    <div class="container" style="margin-top:-24px;">
+        <if condition="!empty($slideshow)">
+            <section class="banner">
+                <ul>
+                    <volist name="slideshow" id="vo">
+                        <li>
+                            <a href="{$vo.url}"><img src="{$vo.img}"/></a>
+                            <span class="title">{$vo.title}</span>
+                        </li>
+                    </volist>
+                </ul>
+                <span class="identify">
+                    <volist name="slideshow" id="vo">
+                        <em></em>
+                    </volist>        
+                </span>
+            </section>
+        </if>
+        <!--||-->
+        <div id="Tab1">
+            <div class="Menubox">
+                <ul>
+                    <volist name="category" id="vo">
+                        <li id="one{$i}" onClick="setTab('one',{$i},4)"  class="<if condition="$i eq 1">hover</if> \">
+                            <span class="icon random_color"><if condition="$vo['icon']"><img src="{$vo.icon}"/></if></span>{$vo.title}
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+            <div class="Contentbox">
+                <!-----S公司简介------>
+                <div id="con_one_1" class="hover">
+                    <div class="yuan bgcfff p10" style="width:90%; margin:10px auto;">
+                        <php>
+                            $result = M('Custom_reply_news')->where(array("cate_id"=>"63"))->select();
+                        </php>
+                        <foreach item="r" name="result">
+                            {$r.content}
+                        </foreach>
+                        <php>unset($result);unset($key);unset($r);</php>
+                    </div>
+                </div>
+                <!-----E公司简介------>
+
+                <!-----S新闻中心------>
+                <div id="con_one_2" style="display:none">
+                    <php>                      
+                        $result = M('Custom_reply_news')->where(array("cate_id"=>"64"))->order('id DESC')->limit(0,5)->select();
+                    </php>
+                    <foreach item="r" name="result">                        
+                        <div class="news_hot shadow">
+                            <div class="fl" style="width:45%">
+                                <a href="{:U('detail', 'id='.$r[id])}">
+                                    <notempty name="r.cover"><img src="{$r.cover|get_cover_url}" width="100%"/></notempty>
+                                </a>
+                            </div>
+                            <div class="fr mr7" style="width:50%">
+                                <div class="fs14 lh35 title"><a href="{:U('detail', 'id='.$r[id])}" class="fclan">{$r.title}</a></div>
+                                <div class="fs12 t2em mt5 xinwen" ><a href="{:U('detail', 'id='.$r[id])}">    {$r.intro|msubstr=###,'0','80'}</a></div>
+                            </div>
+                        </div>
+                    </foreach>
+                    <php>unset($result);unset($key);unset($r);</php>
+
+                    <div class="yuan1 w95b bgclan tacn lh35 ffs fcfff"> >><a href="{$category[1]['url']}" class="fcfff mlr10">点击查看更多</a><< </div>
+
+                </div>
+                <!-----E新闻中心------>
+
+                <!-----S案例展示------>
+                <div id="con_one_3" style="display:none">
+                    <div class="centent">
+                        <php>                      
+                        $result = M('Custom_reply_news')->where(array("cate_id"=>"66"))->order('id DESC')->limit(0,4)->select();
+                    </php>
+                        <foreach item="r" name="result">
+                            <div class="<if condition="$key % 2 eq 0">fl<else />fr</if> w48b mb15">
+                            <a href="{:U('detail', 'id='.$r[id])}">
+                                <notempty name="r.cover"><img src="{$r.cover|get_cover_url}" width="100%"/></notempty>
+                            </a>
+                            <div class="case_title">
+                                <a href="{:U('detail', 'id='.$r[id])}">{$r.title}</a>
+                            </div>
+                        </div>
+                        </foreach>
+                        <php>unset($result);unset($key);unset($r);</php>
+                        <div class="yuan1 clear w95b bgclan tacn lh35 ffs fcfff mt10"> >><a href="{$category[2]['url']}" class="fcfff mlr10">点击查看更多</a><< </div>
+                    </div>
+                </div>
+                <!-----E案例展示------>
+
+                <!-----S客服中心------>
+                <div id="con_one_4" style="display:none">
+                    <include file="Public/weiante_kefu"/>                    
+                </div>
+                <!-----E客服中心------>
+            </div>
+        </div>
+        <!--end||-->
+    </div>
+   <!--
+    <if condition="!empty($category)">
+    <section>
+    	<div class="icon_lists">
+            <volist name="category" id="vo">
+                <a class="item" href="{$vo.url}">
+                    <span class="icon random_color"><img src="{$vo.icon}"/></span>
+                    <span class="click_item_txt">{$vo.title}</span>
+                </a>
+            </volist>
+        </div>
+    </section>
+    </if>
+   -->
+    <!-- 底部导航 -->
+    <include file="Public/weiante_footer"/>	
+    <!-- 统计代码 -->
+<notempty name="config.code">
+    <p class="hide bdtongji">
+        {$config.code}
+    </p>
+</notempty>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $.WeiPHP.initBanner(true,5000);
+        $.WeiPHP.setRandomColor('.random_color');
+    })
+
+</script>
+</html>

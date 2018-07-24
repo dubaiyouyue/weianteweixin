@@ -1,0 +1,51 @@
+<include file="Public/weiante_head"/>	
+
+<body id="weisite">
+    {$footer_html}    
+    <div class="centent">
+        <div class="w95b mt15">
+            <div class="fs20 fclan tacn lh55 pt20">联系我们 / Contacts</div>
+            <div class="pt30">
+
+                <div style="width:98%;height:150px;border:#ccc solid 1px; padding:1px; background-color:#fff;" id="map"></div>
+
+            </div>
+            <div class="fs14 lh35 mt15">
+                <p>公司电话：0771-5384496        </p>
+                <p>传真号码：0771-5345426        </p>
+                <p>公司地址：南宁市江南区长凯路23号鸿基工业园2栋西六楼        </p>
+                <p>公司邮箱：gxwellnet@126.com</p>
+            </div>
+
+        </div>
+    </div>    
+    <div style="clear: both;"></div>
+    <!-- 底部导航 -->
+<include file="Public/weiante_footer"/>	
+<!-- 统计代码 -->
+<notempty name="config.code">
+    <p class="hide bdtongji">
+        {$config.code}
+    </p>
+</notempty>
+
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=X8u8xx9GzO88EIydfLbTsvbK&v=1.0"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("map");
+	map.centerAndZoom(new BMap.Point(108.306177,22.771485), 14);
+
+	map.addControl(new BMap.ZoomControl());  //添加地图缩放控件
+	var marker1 = new BMap.Marker(new BMap.Point(108.306177,22.771485));  //创建标注
+	map.addOverlay(marker1);                 // 将标注添加到地图中
+	//创建信息窗口
+	var infoWindow1 = new BMap.InfoWindow("广西维安特网络技术有限公司<br>长凯路23号鸿基工业园2栋西六楼");
+	marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+	</script>
+
+
+</body>
+
+
+</html>

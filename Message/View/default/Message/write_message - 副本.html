@@ -1,0 +1,61 @@
+<!-- 头部 -->
+<include file="Public/weiante_head"/>	
+<link rel="stylesheet" type="text/css" href="{:ADDON_PUBLIC_PATH}/message.css" media="all">
+
+<body>
+    {$footer_html}
+    <div><img src="__IMG__/weiante/message.jpg" width="100%" /></div>
+    <div class="w95b mt30">
+        <div class="tacn fs20 fclan mb30">在线留言 / Messages</div>
+        <form method="post" enctype="multipart/form-data">
+            <if condition="$need_nickname">
+                <div class="form-item cf">
+                    <label class="item-label">姓名</label>
+                    <div class="controls">
+                        <input type="text" class="text input-medium input3 yuan bgcfff lh45 h45 t2em" name="nickname" id="nickname" value="{$user.nickname}">
+                    </div>
+                </div>
+            </if>
+            <if condition="$need_mobile">
+                <div class="form-item cf">
+                    <label class="item-label">联系方式</label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="mobile" id="mobile" value="{$user.mobile}">
+                    </div>
+                </div>
+            </if>
+			上传图片<input type="file" name="upfile" id="file" />
+            <div class="form-item cf">
+                <label class="item-label">内容</label>
+                <div class="controls">
+                    <label class="textarea input-large"><textarea name="content" id="content" class="yuan bgcfff t2em mt10 lh35 textarea1"></textarea></label>
+                </div>
+            </div>                
+            <div class="form-item cf tb pt_10">
+                <button class="tacn yuan bgclan fs16 fcfff lh35 mt20 home_btn submit-btn mb_10 flex_1" id="submit" type="submit" target-form="form-horizontal">提交留言</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="copyright">©2014 维安特&nbsp;&nbsp;技术支持：<a href="http://www.resonance.com.cn">南宁共振广告</a></div>
+
+    <script type="text/javascript">
+        $('.submit-btn').click(function () {
+            //$.Dialog.loading();//loading等待调用  loading完成$.Dialog.close();关闭loading
+            //$.Dialog.success();//成功调用 提示一秒后自动关闭
+            if ($('#nickname').val() != undefined && $('#nickname').val() == "") {
+                $.Dialog.fail("请填写姓名！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+            if ($('#mobile').val() != undefined && $('#mobile').val() == "") {
+                $.Dialog.fail("请填写联系方式！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+            if ($('#content').val() == "") {
+                $.Dialog.fail("请填写留言内容！");//成功调用 提示一秒后自动关闭
+                return false;
+            }
+        })
+    </script>
+</body>
+</html>

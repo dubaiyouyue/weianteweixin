@@ -1,0 +1,23 @@
+<include file="Public/weiante_head"/>	
+<body id="weisite">
+{$footer_html}
+<div class="centent">
+  <div class="w90b">
+    <div class=" fs14 tacn lh35 bbdcc mt10">{$info.title}</div>
+    <div class="tacn fc999 mb15">发布时间：{$info.cTime|time_format=###,'Y-m-d'}   浏览次数：{$info.view_count}</div>
+    <notempty name="info.cover"><p><img src="{$info.cover|get_cover_url}"/></p></notempty>
+                {$info.content|htmlspecialchars_decode}
+  </div>
+</div>
+    <div style="clear: both;"></div>
+<include file="Public/weiante_footer"/>
+<!-- 统计代码 -->
+<notempty name="config.code">
+<p class="hide bdtongji">
+{$config.code}
+</p>
+</notempty>
+</body>
+<script type="text/javascript">
+</script>
+</html>

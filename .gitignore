@@ -1,0 +1,45 @@
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+/databases/
+/logfiles/
+/新建文件夹/
+/cache/
+/jianli.docx
+/favicon.ico
+/others/
+/Runtime/
+/wwwroot/u/
+/wwwroot/simsun.ttc
+/wwwroot/favicon.ico
+/wwwroot/新建文件夹/
+/wwwroot/images/
+/team20180605.sql
+/wwwroot20180605.rar
+/upload/
+/Uploads/
+/images/
+/Cache/
+/布局/
+/tx/
+/config/config_db.php

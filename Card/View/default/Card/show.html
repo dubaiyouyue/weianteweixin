@@ -1,0 +1,61 @@
+<include file="Public/mobile_head"/>	
+<link href="{:ADDON_PUBLIC_PATH}/card.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<style>    
+.bgc000{background-color:#000;}
+.h19{height:19px;}
+.fl{float:left;}
+.w20b{width:20%;}
+.line{background:url(./Public/Home/images/weiante/line.jpg) no-repeat right center;}
+.lh35{line-height:35px;}
+.tacn{text-align:center;}
+.vip_bg{background:url(./Public/Home/images/weiante/vip_topbg.jpg) repeat-x top;}
+.bse0{border:1px solid #E0E0E0;}
+.yuan{ -moz-border-radius:10px;-webkit-border-radius:10px; -khtml-border-radius:10px;   -khtml-border-radius:10px; }
+.bgcfff{background-color:#ffffff;}
+.mt20{margin-top:20px;}
+.bbscc{border-bottom:1px solid #EFEDEE;}
+.p10{padding:10px;}
+.fr{float:right;}
+.mt7{margin-top:7px;}
+</style>
+<body>
+    {$footer_html}
+	<div id="" class="vip_bg">
+        <div class="p_10"> 
+            <div class="vipcard_content">
+                <div class="card" style="background-image:url({$config.background_url});">
+                    <span class="card_name">{$config.title}</span>
+                    <!--<span class="card_num">卡号：{$config.length}</span>-->
+                    <div class="card_mask"></div>
+                </div>
+                <div style="padding-top: 10px;"></div>
+                <div class="card_info">
+                    <div class="tb tacn" style="width:95%"><a href="{:addons_url('Card://Card/writeCardInfo')}" class="btn flex_1">点击注册维安特微信会员</a></div>
+                    <!--<p class=" gray_txt"><center>维安特微信会员</center></p>-->
+                    <div class="bse0 mt20 bgcfff yuan">
+                        <a href="{:addons_url('Card://Card/introduction')}" ><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>会员说明</div></a>
+<!--                        <div class="single_item_line"></div>
+                        <a class="p_10 arrow_icon mr_10" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/storeList')}" target="_blank">适用门店电话及地址</a>-->
+                    </div>
+                    <div class="bse0 mt20 bgcfff yuan">
+                        <a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D{$config.address}&name={$config.address}&content={$config.address}&output=html"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>地址：{$config.address}</div></a>
+                        <a href="tel:{$config.phone}"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>电话：{$config.phone}</div></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <p class="copyright">{$system_copy_right}</p>
+    </div>
+    
+</body>
+<script type="text/javascript">
+		if($('#select_background').val()==11){
+			var cardBgUrl = $("#hidden_background_custom").val();
+		}else{
+			var cardBgUrl = '{:ADDON_PUBLIC_PATH}/card_bg_'+$('#select_background').val()+".png";
+
+		}	
+		$('#cardBg').attr("href",cardBgUrl);
+</script>
+</html>

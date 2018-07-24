@@ -1,0 +1,98 @@
+<include file="Public/weiante_head"/>	
+<link href="{:ADDON_PUBLIC_PATH}/card.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+
+<body>
+    {$footer_html}
+    <div class="vip_bg">
+        <div class="p_10"> 
+            <div class="vipcard_content">
+                <div class="card geted">
+                    <img src="{$config.background_url}" width="90%"/>
+                    <span class="card_name">{$config.title}</span>
+                    <!--<span class="card_num">卡号：{$info.number}</span>-->
+                </div>
+                <div class="card_info get_card_info">
+                    <div class="bse0 bgcfff mb20 p10 fs14 yuan1 tacn"><span class="fclan">{$info.username}</span>，欢迎回来!</div>  
+                    <!------E充值支付------->
+                      <div class="bse0 mt20 bgcfff yuan mb10">
+                      	<form  method="post">
+                            	<div class="p10 bbscc"><span class="fr w70b" style="margin-top: -5px;"><input step="0.01" type="number" name="money"  /></span>支付金额</div>
+                            	
+                            	<div class="p10 bbscc"><button class="w30b" type="submit"  onkeypress="javascript:JHshNumberText()" style="text-align: center;color: #000;background-color: #a0a0a0;margin: auto;">立即支付</button></div>
+                            </form>
+                           </div>
+                            
+         <!------E充值支付------->
+                    <!--<div class="single_item tb score_nav m_15">
+                        <a class="p_10 flex_1 btl bbl" href="#">总积分<br/>100</a>
+                        <a class="p_10 flex_1" href="#">签到积分<br/>50</a>
+                        <a class="p_10 flex_1 btr bbr" href="#">消费积分<br/>50</a>
+                    </div>-->
+                    <div class="bse0 mt20 bgcfff yuan">
+                        <!--<a href="javascript:void(0);"><div class="p10 bbscc"><span class="fr">0元</span>账户余额</div></a>-->
+                        <a href="{:addons_url('Card://expense/show')}"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>支付记录</div></a>
+                        <a href="<if condition="$info['video_url']">{$info.video_url}<else />javascript:alert('未添加视频监控地址！');</if>"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>查看实时监控</div></a>
+     <a href="{:addons_url ( 'Card://notice/show' )}"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>最新通知</div><!--<span class="tip_count">1</span>--></a>
+                        <!--                        <div class="single_item_line"></div>
+                                                <a class="p_10 arrow_icon mr_10" href="#" target="_blank">会员卡特权<span class="tip_count">13</span></a>-->
+                        <!--<div class="single_item_line"></div>
+                        <a class="p_10 arrow_icon mr_10" href="{:addons_url ( 'Card://coupons/show' )}">会员优惠券</a>
+                        <div class="single_item_line"></div>-->
+                        <!--<a class="p_10 arrow_icon mr_10" href="{:addons_url ( 'Card://score/score' )}" target="_blank">我的积分<span class="tip_count">1</span></a>-->
+                    </div>
+                    <!--<div class="single_item m_15">
+                        <a class="p_10 arrow_icon mr_10" href="#" target="_blank">签到赚积分<span class="tip_count_yellow">今日未签到</span></a>
+                        <div class="single_item_line"></div>
+                        <a class="p_10 arrow_icon mr_10" href="#" target="_blank">个人资料</a>
+                       
+                    </div>-->
+                    <div class="bse0 mt20 bgcfff yuan">
+                        <a href="{:addons_url('Card://Card/introduction')}" ><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>会员说明</div></a>                       
+                        <a href="{:addons_url ( 'Card://Card/editCardInfo' )}"><div class="p10 "><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>个人资料</div></a>
+                        <!--                        <div class="single_item_line"></div>
+                                                <a class="p_10 arrow_icon mr_10" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/storeList')}" target="_blank">适用门店电话及地址</a>-->
+                    </div>
+                    <div class="bse0 mt20 bgcfff yuan">
+                        <a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D{$config.address}&name={$config.address}&content={$config.address}&output=html"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>地址：{$config.address}</div></a>
+                        <a href="tel:13155333122"><div class="p10 bbscc"><span class="fr mt7"><img src="__IMG__/weiante/right2.jpg" width="7" height="12" /></span>电话：{$config.phone}</div></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <p class="copyright">{$system_copy_right}</p>
+    </div>
+    <nav class="bottom_nav">
+        <a class="icon_card cur" href="{:addons_url('Card://Card/showCard')}">会员中心</a>
+        <!--        <a class="icon_crown" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/introduction')}">特权</a>-->
+        <a class="icon_time" href="{:addons_url('Card://notice/show')}">最新通知</a>
+        <a class="icon_tag" href="{:addons_url('Card://expense/show')}">支付记录</a>
+        <!--<a class="icon_tag" href="{:addons_url('Card://coupons/show')}">优惠券</a>-->
+        <!--        <a class="icon_gift" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/exchange')}">兑换</a>
+            <a class="icon_time" href="{:addons_url($_REQUEST ['_addons'].'://'.$_REQUEST ['_controller'].'/score')}">签到</a>-->
+    </nav>
+    <div class="bottom_nav_blank"></div>
+</body>
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideToolbar');
+    });
+    function onlyNumber(){ 
+if(!(((window.event.keyCode >= 48) && (window.event.keyCode <= 57)) 
+|| (window.event.keyCode == 13) || (window.event.keyCode == 46) 
+|| (window.event.keyCode == 45))){ 
+window.event.keyCode = 0 ; 
+} 
+} 
+// 本函数用于限制文本输入框中只能输入数字"0"到"9" 
+//@Inline HTML: <ELEMENT ... onkeypress="javascript:JHshNumberText()" style="ime-mode:disabled"> For Input 
+//@Event property: object.attachEvent("onkeypress",JHshNumberText);object.style.imeMode = "disabled"; 
+function JHshNumberText() 
+{ 
+if ( !(((window.event.keyCode >= 48) && (window.event.keyCode <= 57)) || (window.event.keyCode == 13))) 
+{ 
+window.event.keyCode = 0 ; 
+} 
+}
+</script>
+</html>

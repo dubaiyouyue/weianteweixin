@@ -1,0 +1,26 @@
+<include file="Public/weiante_head"/>	
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<body id="weisite">
+    {$footer_html}    
+    <div class="centent">
+        <div class="w95b mt15">
+            <div class="fs20 fclan tacn lh55 pt20">客服中心 / Service</div>
+            <!-----S客服中心------>
+                <div >                    
+                    <include file="Public/weiante_kefu"/>
+                </div>
+                <!-----E客服中心------>
+
+        </div>
+    </div>    
+    <div style="clear: both;"></div>
+    <!-- 底部导航 -->
+<include file="Public/weiante_footer"/>	
+<!-- 统计代码 -->
+<notempty name="config.code">
+    <p class="hide bdtongji">
+        {$config.code}
+    </p>
+</notempty>
+</body>
+</html>

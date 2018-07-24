@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" /></head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<?php
+$gla=$_GET['la'];
+$glo=$_GET['lo'];
+if($gla && $glo){
+?>
+<div class="ditu" id="map" style="width:100%;height:300px;"></div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=X8u8xx9GzO88EIydfLbTsvbK&v=1.0"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("map");
+	map.centerAndZoom(new BMap.Point(<?php echo $glo;?>,<?php echo $gla;?>), 14);
+
+	map.addControl(new BMap.ZoomControl());  //添加地图缩放控件
+	var marker1 = new BMap.Marker(new BMap.Point(<?php echo $glo;?>,<?php echo $gla;?>));  //创建标注
+	map.addOverlay(marker1);                 // 将标注添加到地图中
+	//创建信息窗口
+	//var infoWindow1 = new BMap.InfoWindow("广西有限公司<br>地址：南宁市江南区高棠路平阳仓库F8号");
+	//marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+  map.addEventListener("click", function (e) {
+    //marker1.setPoint(e.Point);
+	map.clearOverlays();
+    map.addOverlay(new BMap.Marker(new BMap.Point(e.point.lng,e.point.lat)));
+	//alert(e.point.lng);
+	//alert(e.point.lat);
+    //将点击的点的坐标显示在页面上
+    //document.getElementById("lng").value = e.point.lng;
+    //document.getElementById("lat").value = e.point.lat;
+    //InOrOutPolygon(e.point.lng, e.point.lat);
+  });
+</script>
+<?php
+}else{
+?>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  //alert(position.coords.accuracy);
+  location.href = '/bd.php?la='+ position.coords.latitude +'&lo='+ position.coords.longitude;
+  return false;
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude;	
+  }
+getLocation();
+</script>
+<?php }?>
+
+
+
+
+
+
+
+
+
+
+<a href="http://buildnet.net.cn/index.php?s=/addon/Repair/Repair/test.html">dafads</a>
+</body>
+</html>

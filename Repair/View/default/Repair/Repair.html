@@ -1,0 +1,33 @@
+<!-- 头部 -->
+<include file="Public/weiante_head"/>	
+<link rel="stylesheet" type="text/css" href="{:ADDON_PUBLIC_PATH}/Repair.css" media="all">
+
+<body>
+    {$footer_html}
+    <div><img src="__IMG__/weiante/message.jpg" width="100%" /></div>
+    <div class="w95b liuyan_bgline mt20" style="height:auto; overflow:auto;">
+
+        <!------E我要留言------->
+        <div class="h45 mb60">
+            <div class="fl w15b" ><img src="__IMG__/weiante/liuyan_icon.jpg" width="45" height="45" /></div>
+            <a href="{:addons_url('Repair://Repair/writeRepair')}" class="fr yuan h45 bgclan lh45 w85b"><div class="t2em fcfff fs16 fl">在线报修</div><div class="fr mr12 mt15"><img src="__IMG__/weiante/right1.jpg" width="7" height="12" /></div></a>
+        </div>
+        <!------E我要留言------->
+        <foreach name="list_data" item="vo">
+            <div class="mb30" style="height:auto; overflow:auto;">
+                <div class="w15b fl"><img src="__IMG__/weiante/xinxi.jpg" width="29" height="30" class="ml7" /></div>
+                <div class="fr w85b" style="height:auto; overflow:auto;">
+                    <div class="fs14 fclan lh14">{$vo.nickname}</div>
+                    <div class="fclan lh16 mt7">{$vo.cTime|time_format=###,'Y-m-d H:d'}</div>
+                    <div class="yuan bgcfff p10 mt10 fs14">{$vo.content}</div>
+                    <if condition="$vo['replay']"><div class="yuan bgcfff p10 mt10 fs14"><span class="fclan">回复：</span>{$vo.replay}</div></if>
+                </div>
+            </div>
+        </foreach>
+
+
+    </div>
+    <div class="copyright">©2014 维安特&nbsp;&nbsp;技术支持：<a href="http://www.resonance.com.cn">南宁共振广告</a></div>
+    {$footer_html}
+</body>
+</html>

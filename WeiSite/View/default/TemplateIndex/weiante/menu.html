@@ -1,0 +1,66 @@
+<include file="Public/weiante_head"/>	
+<link href="{:CUSTOM_TEMPLATE_PATH}Index/ColorV1/main.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body id="weisite">
+    {$footer_html}
+
+           
+            <div class="bgcfff p10 t2em lh35 fs14">
+                <div class="w90b">
+                    <a href="/index.php?s=/addon/WeiSite/WeiSite/index.html">
+                        <div class="mt10 mb10 yuan1 bgclan fcfff ">
+                            <span class="fr mt12 mr20">
+                                <img src="__IMG__/weiante/right1.jpg" width="7" height="12" />
+                            </span>
+                            ● 网站首页
+                        </div>
+                    </a>
+                    <div style="clear: both;"></div>
+                    <volist name="category" id="vo">
+                    <a href="{$vo.url}">
+                        <div class="mt10 mb10 yuan1 bgclan fcfff ">
+                            <span class="fr mt12 mr20">
+                                <img src="__IMG__/weiante/right1.jpg" width="7" height="12" />
+                            </span>● {$vo.title}
+                        </div>
+                    </a>
+                    <div style="clear: both;"></div>
+                    </volist>                    
+                    <a href="{:addons_url('Message://Message/message')}">
+                        <div class="mt10 mb10 yuan1 bgclan fcfff ">
+                            <span class="fr mt12 mr20">
+                                <img src="__IMG__/weiante/right1.jpg" width="7" height="12" />
+                            </span>
+                            ● 在线留言
+                        </div>
+                    </a>
+                    <div style="clear: both;"></div>
+					
+					
+					
+					 <a href="/index.php?s=/addon/Repair/Repair/writeRepair.html">
+                        <div class="mt10 mb10 yuan1 bgclan fcfff ">
+                            <span class="fr mt12 mr20">
+                                <img src="__IMG__/weiante/right1.jpg" width="7" height="12" />
+                            </span>
+                            ● 在线报修
+                        </div>
+                    </a>
+                    <div style="clear: both;"></div>
+					
+					
+                </div>
+            </div>
+        <!-- 底部导航 -->
+    <include file="Public/weiante_footer"/>	
+    <!-- 统计代码 -->
+<notempty name="config.code">
+    <p class="hide bdtongji">
+        {$config.code}
+    </p>
+</notempty>
+</body>
+<script type="text/javascript"> 
+</script>
+</html>
+</body>
+</html>
